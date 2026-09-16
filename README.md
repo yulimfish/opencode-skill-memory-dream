@@ -2,7 +2,7 @@
 
 > opencode 技能：睡眠隐喻的手动记忆巩固。触发之后，agent 走四个阶段 —— **N1 迷糊 → N2 聚类 → N3 巩固 → REM 修剪** —— 把零散的 `opencode-mem` 碎片压成一小组高信号、可持久的记忆。
 
-隶属 [`opencode-codex-kit`](https://github.com/Yulimfish/opencode-codex-kit)。
+隶属 [`opencode-workflow-kit`](https://github.com/Yulimfish/opencode-workflow-kit)。
 
 ## 四个阶段
 
