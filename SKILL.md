@@ -95,6 +95,15 @@ Tag rule: always include `consolidated` and `dream-<date>` so future dreams can 
    ↳ 覆盖 2026-07 的 2048 维方案（embedding 模型已更换，不再采用）。
 ```
 
+### L2 — Skill Seeds（只提案，先问用户）
+
+Cluster 里有时会浮现一条**可复用流程**（同一路径成功 ≥ 2 次）。那是 L2 技能种子，不是记忆。
+
+- 只在输出里记为候选：做什么、验证方式、证据（memory id / 日期），并给出**建议落位**——通用技能目录 `~/.config/opencode/skills/<name>/` 还是项目目录 `<repo>/.opencode/skills/<name>/`——以及是否建议公开发布。
+- **绝不自己落地**：不 `mkdir`、不建仓库、不移动已有技能。
+- 创建前必须先问用户两件事：**落位**（通用还是项目）和**是否公开发布**。
+- ≥ 2 次证据才列；单次成功不算证据。
+
 ### REM — Prune (destructive, confirm first)
 
 Show the user a preview **before** any `forget` call:
@@ -336,6 +345,7 @@ T1 Fading: <n1> · T0 Decayed: <n0>
 Pruned (decay): forget <P2> 条（已用户确认）
 
 Superseded chains: <如有，列出> 
+L2 Skill Seeds: <如有；每条附建议落位 + 是否发布，需用户确认>
 Conflicts flagged: <如有，列出>
 ```
 
