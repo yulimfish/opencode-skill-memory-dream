@@ -95,6 +95,28 @@ Tag rule: always include `consolidated` and `dream-<date>` so future dreams can 
    ↳ 覆盖 2026-07 的 2048 维方案（embedding 模型已更换，不再采用）。
 ```
 
+### N3.5 — Contract / Skill Conflict Gate（先问用户，不写入）
+
+对每个准备写入的合并稿，先只读比对其相关的高权威 rule / decision 片段与 `AGENTS.md`、相关 skill 的原文。不要为了找冲突而全量扫描无关契约。
+
+若出现互斥说法：
+
+- **暂停该簇**：不写 consolidated memory，也不 forget 原片段。
+- 给用户展示双方原文、`memory id`、`file:line`、冲突点和推荐结论。默认契约/skill 优先；只有记忆带有更新的 user-stated / verified 证据时，才建议修改契约或 skill。
+- 让用户明确选择其一：`修改记忆`、`修改契约或 skill`、`双方共存`（写清适用边界）。
+- 收到选择后才继续：改记忆则以契约/skill 为准写合并稿；改契约/skill 则先按用户批准更新文本再写入；双方共存则在合并稿中注明边界，且不软失效另一侧。
+
+输出样式：
+
+```text
+⚠️ Contract / Skill Conflict
+Memory: `mem_x` — <原文>
+Contract/skill: `AGENTS.md:28` — <原文>
+Conflict: <互斥点>
+Recommendation: <默认契约/skill优先，或有证据的例外>
+Choose: 修改记忆 / 修改契约或 skill / 双方共存
+```
+
 ### L2 — Skill Seeds（只提案，先问用户）
 
 Cluster 里有时会浮现一条**可复用流程**（同一路径成功 ≥ 2 次）。那是 L2 技能种子，不是记忆。
@@ -346,7 +368,8 @@ Pruned (decay): forget <P2> 条（已用户确认）
 
 Superseded chains: <如有，列出> 
 L2 Skill Seeds: <如有；每条附建议落位 + 是否发布，需用户确认>
-Conflicts flagged: <如有，列出>
+Memory conflicts: <如有，列出>
+Contract / Skill Conflicts: <如有；双方原文 + memory id + file:line + 用户选择>
 ```
 
 ## Anti-patterns

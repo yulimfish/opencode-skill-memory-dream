@@ -24,6 +24,7 @@
 
 - REM 修剪**必须**给用户看完整预览列表，并且拿到明确的"确认"才能忘掉。
 - L2 技能种子只提案，绝不自己落地：创建前先问用户**落位**（通用技能目录 vs 项目 `<repo>/.opencode/skills/`）和**是否公开发布**。
+- 记忆与 `AGENTS.md` / skill 冲突时，暂停该簇的写入和遗忘，展示双方原文、`memory id`、`file:line`，等用户选择修改记忆、修改契约/skill 或双方共存。
 - 永远不修：< 24 小时的碎片、带 `pinned` / `永久` / `keep` 标签的、以及塑造用户画像的事实。
 - 每条巩固后的新记忆必带 tag：`consolidated`、`dream-<YYYY-MM-DD>`、`<topic>`。被覆盖的旧记忆用 supersession 语句显式声明。
 
